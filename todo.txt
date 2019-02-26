@@ -1,0 +1,21 @@
+* Primer disabled
+    * Neki <input> u vezbama ce imati vec uradjeno resenje (staviti im disabled). Uradi da funkcije za proveru vrednosti ignorisu ova polja.
+
+* Check answer
+    * Kad se prvo klknulo "Show answer" pa onda "check answer", da se umesto provere polja, njihvoe vrednosti izbrisu.
+
+* Skraceni oblici u odgovoru
+    * Vrednost data-answers atributa je unutar '' zbog toga sto je ceo input string u JSONu pa mora unutar "". Ovo pravi problem kad neki dgovor treba da sadrzi ' kao sto to nekad kratki odgovori sadrze.
+    * Ideja: neka neki mdrugim karakterom budu razgranicenu, npr |
+
+* Prosirivanje polja na mob
+    * Kad se unosi odgovor polje se prosiruje. Proveri da li na mob ovo radi ok, da li se uvek ceo odgvoor vidi.
+
+* Mobile Controllers buttons sticky
+    * Na mobilnom stavi da su tri dugmeta sticky top:0 i da su centrirana na sredinu
+
+* Example input css klasa
+    * Izmeni u question input ili tako nekako
+
+* Spell check
+    * iskljuci spellcheck u input poljima

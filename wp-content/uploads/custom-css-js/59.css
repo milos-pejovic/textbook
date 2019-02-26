@@ -1,0 +1,77 @@
+<!-- start Simple Custom CSS and JS -->
+<style type="text/css">
+@media screen and (max-width: 768px) {
+	.answer-controllers {
+        position: sticky;
+        top: 0;
+      	text-align: center;
+    }
+}
+
+.example-input {
+  height: 20px;
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid black !important;
+  text-align: center;
+  background-color: #eee;
+}
+
+.answer-controllers {
+  	background-color: #eee;
+  	padding: 10px 0;
+}
+
+.answer-controllers button {
+	height: 40px;
+  	line-height: 12px;
+  	background-color: #326432;
+  	width: 90px;
+}
+
+.correct-answer {
+	color: #326432 !important;
+}
+
+.wrong-answer {
+	color: #b43232 !important;
+}
+
+.unchecked-answer {
+	color: #000 !important;
+}
+
+.answer-controllers {
+	margin-bottom: 15px;
+}
+
+.exercise-instructions .exercise-hero-image {
+	width: 800px;
+  	height: auto;
+}
+
+.question-image {
+	width: 180px;
+  	height: auto;
+}
+
+.single-question .fa-check,
+.single-question .fa-times {
+	margin: 0 5px;
+	font-size: 17px;
+  	display: none;
+}
+
+.single-question .fa-check {
+	color: #326432;
+}
+
+.single-question .fa-times {
+	color: #b43232;
+}
+
+
+
+
+</style>
+<!-- end Simple Custom CSS and JS -->
