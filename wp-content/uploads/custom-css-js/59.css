@@ -1,20 +1,40 @@
 <!-- start Simple Custom CSS and JS -->
 <style type="text/css">
+* {
+	font-family: "Times new roman";
+}
+
+p, span {
+	font-size: 18px;
+}
+
 @media screen and (max-width: 768px) {
 	.answer-controllers {
         position: sticky;
         top: 0;
       	text-align: center;
     }
+  
+    .word-list-wrap {
+      width: 100% !important;
+    }
 }
 
-.example-input {
+.single-exercise p,
+.single-exercise span,
+.single-exercise input,
+.single-exercise div {
+	font-size: 18px !important;
+}
+
+.question-input {
   height: 20px;
   width: 100px;
   border: none;
   border-bottom: 1px solid black !important;
   text-align: center;
   background-color: #eee;
+  padding: 13px !important;
 }
 
 .answer-controllers {
@@ -70,8 +90,26 @@
 	color: #b43232;
 }
 
+.single-input-field {
+	display: inline-block;
+}
 
+.word-list-wrap {
+  margin-top: 17px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+  overflow: hidden;
+  width: 70%;
+}
 
+.word-list-item {
+  display: inline-block;
+  margin: 0 18px;
+}
 
+.exercise {
+	margin-bottom: 30px;
+}
 </style>
 <!-- end Simple Custom CSS and JS -->

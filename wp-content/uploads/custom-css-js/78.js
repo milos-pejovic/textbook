@@ -13,18 +13,18 @@ var clearAllBtn= $('#clear-all-button');
 function answerUnchecked(inputField) {
 	inputField.removeClass('correct-answer wrong-answer');
 	inputField.addClass('unchecked-answer');
-  	inputField.parents('.single-question').find('.fa-check').hide();
-  	inputField.parents('.single-question').find('.fa-times').hide();
+  	inputField.parents('.single-input-field').find('.fa-check').hide();
+  	inputField.parents('.single-input-field ').find('.fa-times').hide();
 }
   
 function answerCorrect(inputField) {
   
-  	console.warn("Correct answer");
+  	console.warn("Correct answer: " + inputField.val());
   
 	inputField.removeClass('unchecked-answer wrong-answer');
 	inputField.addClass('correct-answer');
-  	inputField.parents('.single-question').find('.fa-check').show();
-  	inputField.parents('.single-question').find('.fa-times').hide();
+  	inputField.parents('.single-input-field').find('.fa-check').show();
+  	inputField.parents('.single-input-field').find('.fa-times').hide();
 }  
   
 function answerWrong(inputField) {
@@ -33,8 +33,8 @@ function answerWrong(inputField) {
   
 	inputField.removeClass('unchecked-answer correct-answer');
 	inputField.addClass('wrong-answer');
-  	inputField.parents('.single-question').find('.fa-check').hide();
-  	inputField.parents('.single-question').find('.fa-times').show();
+  	inputField.parents('.single-input-field').find('.fa-check').hide();
+  	inputField.parents('.single-input-field').find('.fa-times').show();
 }  
   
 // When input field value is changed, text loses color  
@@ -60,7 +60,7 @@ function changeInputFieldWidth(inputField) {
   
 // Assign input field input event handler  
   
-$('.exercises input').each(function() {
+$('.exercise input').each(function() {
 	$(this).on('input', function() {
     	changeInputFieldWidth($(this));
      	$(this).removeClass('showing-correct-answers');
@@ -70,7 +70,10 @@ $('.exercises input').each(function() {
 // Checking answers 
   
 checkBtn.on('click', function() {
-	$('.exercises input').each(function() {
+  
+  console.warn("Checking answers");
+  
+	$('.exercise input').each(function() {
       
       if ($(this).hasClass('showing-correct-answers')) {
         return;
@@ -102,7 +105,7 @@ checkBtn.on('click', function() {
 // Showing answers
   
 showAnswerBtn.on('click', function() {
-	$('.exercises input').each(function() {
+	$('.exercise input').each(function() {
 		var answers = $(this).attr('data-answers');
       	answers = answers.replace(/\//g, ' / ');
 		$(this).val(answers);
@@ -115,7 +118,7 @@ showAnswerBtn.on('click', function() {
 // Clear all
 
 clearAllBtn.on('click', function() {
-	$('.exercises input').each(function() {
+	$('.exercise input').each(function() {
       	$(this).removeClass('showing-correct-answers');
 		$(this).val('');
       	answerUnchecked($(this));
