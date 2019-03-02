@@ -12,3 +12,12 @@
 
 * Visisna input polja
     * Crta (border-bottom) je previse nisko. Ili sredi cssom, ili promeni temu.
+
+* Hide wordpress
+    * Instaliraj plugin koji sakriva da je projekat WordPress
+
+* Hide admin login
+    * Instaliraj plugin koji menja ulr logina
+
+* Hide admin
+    * Instaliraj plugin da korisnici (koji nisu admin) ne vide admin bar

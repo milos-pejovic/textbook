@@ -43,6 +43,22 @@ $questionHtml = $content['data']['items'][$i]['text'];
 // Input fields
 
 foreach($content['data']['items'][$i]['input-fields'] as $fieldIndex => $fieldData) {
+    $isExample = false;
+    
+    if (isset($content['data']['items'][$i]['example'])){
+        $isExample = true;
+    }
+    
+    if ($isExample){
+        $answers = implode(" | ",$fieldData['answers']);
+        $inputFieldHtml = '<div class="single-input-field"><input type="text" class="question-input example" data-answers="' . $answers . '" value="'.$answers.'" readonly="readonly" //><i class="fas fa-check"></i><i class="fas fa-times"></i></div>';
+        $questionHtml = str_replace($fieldIndex, $inputFieldHtml, $questionHtml);
+    } else {
+        $answers = implode(" | ",$fieldData['answers']);
+        $inputFieldHtml = '<div class="single-input-field"><input type="text" class="question-input" data-answers="' . $answers . '" //><i class="fas fa-check"></i><i class="fas fa-times"></i></div>';
+        $questionHtml = str_replace($fieldIndex, $inputFieldHtml, $questionHtml);
+    }
+    
     $answers = implode(" | ",$fieldData['answers']);
     $inputFieldHtml = '<div class="single-input-field"><input type="text" class="question-input" data-answers="' . $answers . '" //><i class="fas fa-check"></i><i class="fas fa-times"></i></div>';
     $questionHtml = str_replace($fieldIndex, $inputFieldHtml, $questionHtml);

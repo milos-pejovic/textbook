@@ -47,6 +47,7 @@ p, span {
   	line-height: 12px;
   	background-color: #326432;
   	width: 90px;
+	font-size: 19px;
 }
 
 .correct-answer {
@@ -111,5 +112,20 @@ p, span {
 .exercise {
 	margin-bottom: 30px;
 }
-</style>
+
+.box-shadow {
+	box-shadow: 5px 10px black;
+}
+
+.single-input-field {
+	font-style: italic;
+}
+
+.single-input-field .example:focus {
+	color: #666;
+}
+
+.single-input-field .question-input.example {
+	font-style: italic;
+}</style>
 <!-- end Simple Custom CSS and JS -->

@@ -18,9 +18,6 @@ function answerUnchecked(inputField) {
 }
   
 function answerCorrect(inputField) {
-  
-  	console.warn("Correct answer: " + inputField.val());
-  
 	inputField.removeClass('unchecked-answer wrong-answer');
 	inputField.addClass('correct-answer');
   	inputField.parents('.single-input-field').find('.fa-check').show();
@@ -28,9 +25,6 @@ function answerCorrect(inputField) {
 }  
   
 function answerWrong(inputField) {
-  
-  	console.warn("Wrong answer: " + inputField.val());
-  
 	inputField.removeClass('unchecked-answer correct-answer');
 	inputField.addClass('wrong-answer');
   	inputField.parents('.single-input-field').find('.fa-check').hide();
@@ -49,7 +43,7 @@ $('input').on('input', function() {
 function changeInputFieldWidth(inputField) {
   	var minInputFieldWidth = 80;
 	var valueLength = inputField.val().length;
-  	var inputFieldNewWidth = valueLength * 8 + 35;
+  	var inputFieldNewWidth = valueLength * 9 + 35;
   
   	if (inputFieldNewWidth < minInputFieldWidth) {
     	inputFieldNewWidth = minInputFieldWidth;
@@ -70,11 +64,11 @@ $('.exercise input').each(function() {
 // Checking answers 
   
 checkBtn.on('click', function() {
-  
-  console.warn("Checking answers");
-  
 	$('.exercise input').each(function() {
       
+      if ($(this).hasClass('example')) 
+      	return;
+    
       if ($(this).hasClass('showing-correct-answers')) {
         return;
       } else {
@@ -106,6 +100,10 @@ checkBtn.on('click', function() {
   
 showAnswerBtn.on('click', function() {
 	$('.exercise input').each(function() {
+      
+        if ($(this).hasClass('example')) 
+          return;
+      
 		var answers = $(this).attr('data-answers');
       	answers = answers.replace(/\//g, ' / ');
 		$(this).val(answers);
@@ -119,11 +117,30 @@ showAnswerBtn.on('click', function() {
 
 clearAllBtn.on('click', function() {
 	$('.exercise input').each(function() {
+      
+      	if ($(this).hasClass('example')) 
+      		return;
+      
       	$(this).removeClass('showing-correct-answers');
 		$(this).val('');
       	answerUnchecked($(this));
       	changeInputFieldWidth($(this));
 	});
 });
+  
+// Onload adjust the width of all input fields
+  
+  $('.exercise input').each(function() {
+  	changeInputFieldWidth($(this));
+  });
+  
+// On page load put focus on first input that does not have class "example"
+  for (var i = 0; i < $('.exercise input').length; i++) {
+  	if (!$('.exercise input').eq(i).hasClass('example')){
+    	$('.exercise input').eq(i).focus();
+      	break;
+    }
+  }
+  
 });</script>
 <!-- end Simple Custom CSS and JS -->
