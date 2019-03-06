@@ -38,4 +38,8 @@ function exercise_post_type() {
 }
 add_action('init', 'exercise_post_type');
 
+function display_single_post($post_id) {
+    require 'templates/exercise-templates/single-exercise.php' ;
+}
+
 ?>

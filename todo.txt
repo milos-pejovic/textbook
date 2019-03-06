@@ -21,3 +21,12 @@
 
 * Hide admin
     * Instaliraj plugin da korisnici (koji nisu admin) ne vide admin bar
+
+* 404
+    * vodo sta sa ovim
+
+* Font-awesome
+    * vidi da ih downloadujes sa neta i stavis u projeakt, da bi radile i kad je site offline
+
+* Floated elements na mobu
+    * Vidi da se inicijalna sirina input polja moze namestiti u exercise JSONu

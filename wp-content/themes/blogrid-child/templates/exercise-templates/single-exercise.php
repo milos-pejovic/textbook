@@ -1,20 +1,22 @@
 <?php
 
-$exercise_subtemplates =  '../exercise-subtemplates/';
-$question_templates = '../question-templates/';
+$root = $_SERVER['DOCUMENT_ROOT'];
+
+$exercise_subtemplates = $root . '/wp-content/themes/blogrid-child/templates/exercise-subtemplates/';
+$question_templates = $root . '/wp-content/themes/blogrid-child/templates/question-templates/';
+
+$post = get_post($post_id);
+$content = $post->post_content;
+$content = json_decode($content, true);
 
 echo '<div class="answer-controllers">
-    <button id="check-answer-button">Check</button>  
-    <button id="show-answer-button">Show</button>  
-    <button id="clear-all-button">Clear</button>
+    <button class="check-answer-button" data-exercise-id="'.$post_id.'">Check</button>  
+    <button class="show-answer-button" data-exercise-id="'.$post_id.'">Show</button>  
+    <button class="clear-all-button" data-exercise-id="'.$post_id.'">Clear</button>
 </div>';
 
 echo '<div class="single-exercise">';
 echo '<div class="exercise-instructions">';
-
-$post = get_post();
-$content = $post->post_content;
-$content = json_decode($content, true);
 
 foreach($content['data']['html'] as $segment_type => $segment_data) {
     require $exercise_subtemplates . $segment_type . '.php';

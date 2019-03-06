@@ -10,8 +10,8 @@ p, span {
 
 @media screen and (max-width: 768px) {
 	.answer-controllers {
-        position: sticky;
-        top: 0;
+        _position: sticky;
+        _top: 0;
       	text-align: center;
     }
   
@@ -64,6 +64,10 @@ p, span {
 
 .answer-controllers {
 	margin-bottom: 15px;
+}
+
+.exercise {
+	overflow: hidden;
 }
 
 .exercise-instructions .exercise-hero-image {
@@ -127,5 +131,10 @@ p, span {
 
 .single-input-field .question-input.example {
 	font-style: italic;
+}
+
+.floated-element {
+	float: left;
+  	margin: 0 5px; 
 }</style>
 <!-- end Simple Custom CSS and JS -->

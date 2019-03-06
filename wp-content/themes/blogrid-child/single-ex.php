@@ -17,7 +17,14 @@ get_header(); ?>
 	<div id="primary" class="featured-content content-area">
 		<main id="main" class="site-main">
 
-                    <?php require 'templates/exercise-templates/single-exercise.php' ?>
+                    <?php 
+                    
+//                    display_single_post(get_post()->ID);
+                    display_single_post(136);
+                    display_single_post(46);
+                    display_single_post(216);
+                    
+                    ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

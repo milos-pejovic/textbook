@@ -4,9 +4,9 @@ jQuery(function($){
   
 // Controller buttons  
   
-var checkBtn = $('#check-answer-button');
-var showAnswerBtn = $('#show-answer-button');
-var clearAllBtn= $('#clear-all-button');
+var checkBtn = $('.check-answer-button');
+var showAnswerBtn = $('.show-answer-button');
+var clearAllBtn= $('.clear-all-button');
 
 // Answer styling  
   
@@ -64,7 +64,8 @@ $('.exercise input').each(function() {
 // Checking answers 
   
 checkBtn.on('click', function() {
-	$('.exercise input').each(function() {
+  	var exerciseId = $(this).attr('data-exercise-id'); 
+	$('.exercise input[data-exercise-id="'+exerciseId+'"]').each(function() {
       
       if ($(this).hasClass('example')) 
       	return;
@@ -99,7 +100,8 @@ checkBtn.on('click', function() {
 // Showing answers
   
 showAnswerBtn.on('click', function() {
-	$('.exercise input').each(function() {
+  	var exerciseId = $(this).attr('data-exercise-id'); 
+	$('.exercise input[data-exercise-id="'+exerciseId+'"]').each(function() {
       
         if ($(this).hasClass('example')) 
           return;
@@ -116,7 +118,8 @@ showAnswerBtn.on('click', function() {
 // Clear all
 
 clearAllBtn.on('click', function() {
-	$('.exercise input').each(function() {
+ 	var exerciseId = $(this).attr('data-exercise-id'); 
+	$('.exercise input[data-exercise-id="'+exerciseId+'"]').each(function() {
       
       	if ($(this).hasClass('example')) 
       		return;
@@ -141,6 +144,14 @@ clearAllBtn.on('click', function() {
       	break;
     }
   }
+  
+// Setting the width of floated elements  
+	//$('.floated-element').css('width', ($(this).attr('data-width') + 'px'));
+
+  $('.floated-element').each(function() {
+  	var width = $(this).attr('data-width');
+    $(this).css('width', width + 'px');
+  });
   
 });</script>
 <!-- end Simple Custom CSS and JS -->

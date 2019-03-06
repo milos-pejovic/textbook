@@ -1,5 +1,6 @@
 <?php
 
+echo '<div class="floated-element" data-width="'.$content['data']['items-meta']['floted-element-width'].'">';
 echo '<div class="single-question">';
 
 // Image
@@ -61,4 +62,4 @@ foreach($content['data']['items'][$i]['input-fields'] as $fieldIndex => $fieldDa
     
 }
 
-echo $questionHtml . '</div>';
+echo $questionHtml . '</div></div>';
